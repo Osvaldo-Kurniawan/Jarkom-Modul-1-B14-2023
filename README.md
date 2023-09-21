@@ -116,6 +116,9 @@ Didapat ```ip 104.18.14.101``` dari ip ini pada soal ada clue untuk melakukan su
 
 10 - 4 - 18 - 14 - 10 - 1 -> jdrnja
 
+## Kesulitan
+Pada soal ini kami tidak memiliki clue apapun sehingga tidak dapat mengerti kebutuhan filter yang dapat dipakai, sehingga saat akhirpun tidak dapat solve soal ini
+
 # Soal 7
 Berapa jumlah packet yang menuju IP 184.87.193.88?
 
