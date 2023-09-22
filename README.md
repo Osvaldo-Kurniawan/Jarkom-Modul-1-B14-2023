@@ -60,11 +60,27 @@ b. Hitung jumlah dari ip tersebut
 c. Protokol layer transport apa yang digunakan?
 
 ## Jawab
+Soal tersebut mengharuskan Dapin untuk menganalisis lalu lintas jaringan yang telah ditangkap (capture) dan menghitung berapa banyak paket yang memiliki alamat IP sumber atau tujuan 239.255.255.250 dan menggunakan port 3702.
+
+Filter yang diberikan :
+```
+ip.addr == 239.255.255.250 && udp.port == 3702
+```
+Setelah di apply ke display filter terdapat 21 paket dalam capture yang sesuai dengan kriteria.
+Selain itu, pertanyaan juga meminta untuk mengidentifikasi protokol layer transport yang digunakan. Dalam hal ini, protokol layer transport yang digunakan adalah UDP (User Datagram Protocol). UDP adalah protokol transport yang ringan dan tidak mengandung mekanisme pengiriman ulang seperti TCP, sehingga cocok untuk aplikasi yang membutuhkan transfer data yang cepat tetapi dapat menerima kehilangan data jika terjadi gangguan dalam jaringan.
+
+### Hasil
 
 # Soal 4
 Berapa nilai checksum yang didapat dari header pada paket nomor 130?
 
 ## Jawab
+Pertanyaan ini berkaitan dengan nilai checksum yang terdapat dalam header paket nomor 130 dalam capture jaringan. Untuk menemukan nilai checksum pada paket nomor 130.
+Menggunakan filter:
+```
+frame.number == 130
+```
+Filter ini akan menampilkan paket dengan nomor frame 130. Setelah Anda menemukan paket tersebut, Anda dapat mencari nilai checksum dalam informasi yang ditampilkan. Jawaban yang benar adalah "0x18e5". Ini adalah nilai checksum yang terdapat dalam header paket nomor 130 dalam capture jaringan. Nilai checksum digunakan untuk memeriksa integritas data dalam paket dan digunakan dalam berbagai protokol jaringan untuk memastikan bahwa data tidak rusak atau terubah selama pengiriman.
 
 # Soal 5
 Elshe menemukan suatu file packet capture yang menarik. Bantulah Elshe untuk menganalisis file packet capture tersebut.
@@ -137,6 +153,14 @@ Ketika dihitung diperoleh 6 buah paket jumlahnya
 Berikan kueri filter sehingga wireshark hanya mengambil semua protokol paket yang menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abjad)
 
 ## Jawab
+Untuk mengambil semua paket dengan berbagai protokol yang menuju ke port 80 dan kemudian mengurutkannya secara alfabetis berdasarkan port yang dituju, Anda dapat menggunakan filter Wireshark berikut:
+```
+tcp.port == 80 || udp.port == 80
+```
+1. Paket memiliki port tujuan 80 menggunakan protokol TCP (tcp.port == 80).
+2. Paket memiliki port tujuan 80 menggunakan protokol UDP (udp.port == 80).
+
+Jadi, dengan filter ini, Anda akan menangkap semua paket yang dikirimkan ke port 80, baik menggunakan TCP atau UDP, karena Anda menggunakan operator logika OR (||) untuk menggabungkan dua kondisi ini.
 
 # Soal 9
 Berikan kueri filter sehingga wireshark hanya mengambil paket yang berasal dari alamat 10.51.40.1 tetapi tidak menuju ke alamat 10.39.55.34!
