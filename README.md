@@ -70,6 +70,7 @@ Setelah di apply ke display filter terdapat 21 paket dalam capture yang sesuai d
 Selain itu, pertanyaan juga meminta untuk mengidentifikasi protokol layer transport yang digunakan. Dalam hal ini, protokol layer transport yang digunakan adalah UDP (User Datagram Protocol). UDP adalah protokol transport yang ringan dan tidak mengandung mekanisme pengiriman ulang seperti TCP, sehingga cocok untuk aplikasi yang membutuhkan transfer data yang cepat tetapi dapat menerima kehilangan data jika terjadi gangguan dalam jaringan.
 
 ### Hasil
+![alt text](https://github.com/Arkandrvesh/Jarkom-Modul-1-B14-2023/blob/main/pict/Screenshot%202023-09-22%20103832.png?raw=true)
 
 # Soal 4
 Berapa nilai checksum yang didapat dari header pada paket nomor 130?
@@ -81,6 +82,9 @@ Menggunakan filter:
 frame.number == 130
 ```
 Filter ini akan menampilkan paket dengan nomor frame 130. Setelah Anda menemukan paket tersebut, Anda dapat mencari nilai checksum dalam informasi yang ditampilkan. Jawaban yang benar adalah "0x18e5". Ini adalah nilai checksum yang terdapat dalam header paket nomor 130 dalam capture jaringan. Nilai checksum digunakan untuk memeriksa integritas data dalam paket dan digunakan dalam berbagai protokol jaringan untuk memastikan bahwa data tidak rusak atau terubah selama pengiriman.
+
+### Hasil
+![alt text](https://github.com/Arkandrvesh/Jarkom-Modul-1-B14-2023/blob/main/pict/Screenshot%202023-09-18%20201313.png?raw=true)
 
 # Soal 5
 Elshe menemukan suatu file packet capture yang menarik. Bantulah Elshe untuk menganalisis file packet capture tersebut.
